@@ -12,7 +12,7 @@ def info(data):
         {'dtype': data.dtypes,
          'len': len(data),
          'null': data.isnull().sum(),
-         'null_percent': data.isnull().sum() / len(data)
+         'null_percent': data.isnull().sum() / len(data),
          'nunique': data.nunique()},
         columns = ['dtype', 'len', 'null', 'null_percent', 'nunique']
     )
