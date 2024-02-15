@@ -11,9 +11,10 @@ def info(data):
     df = pd.DataFrame(
         {'dtype': data.dtypes,
          'len': len(data),
+         'nunique': data.nunique(),
+         'duplication': len(data) - data.nunique(),
          'null': data.isnull().sum(),
-         'null_percent': data.isnull().sum() / len(data),
-         'nunique': data.nunique()},
+         'null_percent': data.isnull().sum() / len(data)},
         columns = ['dtype', 'len', 'null', 'null_percent', 'nunique']
     )
     
